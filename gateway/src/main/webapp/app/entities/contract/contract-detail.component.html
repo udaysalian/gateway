@@ -1,0 +1,45 @@
+
+<div *ngIf="contract">
+    <h2><span jhiTranslate="netraApp.contract.detail.title">Contract</span> {{contract.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row">
+        <dt><span jhiTranslate="netraApp.contract.contrId">Contr Id</span></dt>
+        <dd>
+            <span>{{contract.contrId}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.contract.updater">Updater</span></dt>
+        <dd>
+            <span>{{contract.updater}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.contract.updateTimeStamp">Update Time Stamp</span></dt>
+        <dd>
+            <span>{{contract.updateTimeStamp | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.contract.rtSched">Rt Sched</span></dt>
+        <dd>
+            <div *ngIf="contract.rtSched">
+                <a [routerLink]="['/rt-sched', contract.rtSched?.id]">{{contract.rtSched?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="netraApp.contract.businessAssociate">Business Associate</span></dt>
+        <dd>
+            <div *ngIf="contract.businessAssociate">
+                <a [routerLink]="['/business-associate', contract.businessAssociate?.id]">{{contract.businessAssociate?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'contract/'+ contract.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

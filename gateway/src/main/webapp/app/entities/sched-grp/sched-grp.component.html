@@ -1,0 +1,71 @@
+<div>
+    <h2><span jhiTranslate="netraApp.schedGrp.home.title">Sched Grps</span>
+        <button class="btn btn-primary float-xs-right create-sched-grp" [routerLink]="['/', { outlets: { popup: ['sched-grp-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="netraApp.schedGrp.home.createLabel">
+            Create new Sched Grp
+            </span>
+        </button></h2>
+    <jhi-alert></jhi-alert>
+
+    <div class="container-fluid">
+        <div class="row">
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="schedGrps">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="netraApp.schedGrp.schedGrpId">Sched Grp Id</span></th>
+            <th><span jhiTranslate="netraApp.schedGrp.description">Description</span></th>
+            <th><span jhiTranslate="netraApp.schedGrp.rcptSection">Rcpt Section</span></th>
+            <th><span jhiTranslate="netraApp.schedGrp.dlvrySection">Dlvry Section</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let schedGrp of schedGrps ;trackBy: trackId">
+                <td><a [routerLink]="['../sched-grp', schedGrp.id ]">{{schedGrp.id}}</a></td>
+                <td>{{schedGrp.schedGrpId}}</td>
+                <td>{{schedGrp.description}}</td>
+                <td>
+                    <div *ngIf="schedGrp.rcptSection">
+                        <a [routerLink]="['../section', schedGrp.rcptSection?.id ]" >{{schedGrp.rcptSection?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="schedGrp.dlvrySection">
+                        <a [routerLink]="['../section', schedGrp.dlvrySection?.id ]" >{{schedGrp.dlvrySection?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-xs-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../sched-grp', schedGrp.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'sched-grp/'+ schedGrp.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'sched-grp/'+ schedGrp.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

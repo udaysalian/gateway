@@ -1,0 +1,54 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "businessAssociate",
+            "otherEntityName": "businessAssociate",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "contact",
+            "otherEntityName": "contact",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "businessAssociateContact"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "mailAddress",
+            "otherEntityName": "businessAssociateAddress",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "businessAssociateContact"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "deliveryAddress",
+            "otherEntityName": "businessAssociateAddress",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "businessAssociateContact"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "businessAssociateContactId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "beginDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20170321041448",
+    "entityTableName": "business_associate_contact",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

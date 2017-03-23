@@ -1,0 +1,67 @@
+<div>
+    <h2><span jhiTranslate="netraApp.rtSchedVald.home.title">Rt Sched Valds</span>
+        <button class="btn btn-primary float-xs-right create-rt-sched-vald" [routerLink]="['/', { outlets: { popup: ['rt-sched-vald-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="netraApp.rtSchedVald.home.createLabel">
+            Create new Rt Sched Vald
+            </span>
+        </button></h2>
+    <jhi-alert></jhi-alert>
+
+    <div class="container-fluid">
+        <div class="row">
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="rtSchedValds">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="netraApp.rtSchedVald.validType">Valid Type</span></th>
+            <th><span jhiTranslate="netraApp.rtSchedVald.updater">Updater</span></th>
+            <th><span jhiTranslate="netraApp.rtSchedVald.updateTimeStamp">Update Time Stamp</span></th>
+            <th><span jhiTranslate="netraApp.rtSchedVald.rtSched">Rt Sched</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let rtSchedVald of rtSchedValds ;trackBy: trackId">
+                <td><a [routerLink]="['../rt-sched-vald', rtSchedVald.id ]">{{rtSchedVald.id}}</a></td>
+                <td>{{rtSchedVald.validType}}</td>
+                <td>{{rtSchedVald.updater}}</td>
+                <td>{{rtSchedVald.updateTimeStamp | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="rtSchedVald.rtSched">
+                        <a [routerLink]="['../rt-sched', rtSchedVald.rtSched?.id ]" >{{rtSchedVald.rtSched?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-xs-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../rt-sched-vald', rtSchedVald.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'rt-sched-vald/'+ rtSchedVald.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'rt-sched-vald/'+ rtSchedVald.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

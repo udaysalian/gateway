@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "contrId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "activityNbr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rcptLocNbr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dlvryLocNbr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "updater",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "updateTimeStamp",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170321041448",
+    "entityTableName": "activity",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

@@ -1,0 +1,24 @@
+{
+    "netraApp": {
+        "rtSched" : {
+            "home": {
+                "title": "Rt Scheds",
+                "createLabel": "Create a new Rt Sched",
+                "createOrEditLabel": "Create or edit a Rt Sched"
+            },
+            "created": "A new Rt Sched is created with identifier {{ param }}",
+            "updated": "A Rt Sched is updated with identifier {{ param }}",
+            "deleted": "A Rt Sched is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Rt Sched {{ id }}?"
+            },
+            "detail": {
+                "title": "Rt Sched"
+            },
+            "rsType": "Rs Type",
+            "updater": "Updater",
+            "updateTimeStamp": "Update Time Stamp",
+            "rtSchedVald": "Rt Sched Vald"
+        }
+    }
+}

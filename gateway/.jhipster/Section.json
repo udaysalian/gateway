@@ -1,0 +1,30 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "sectionLocation",
+            "otherEntityName": "sectionLocation",
+            "otherEntityRelationshipName": "section"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "sectionId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sectionType",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170321041448",
+    "entityTableName": "section",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

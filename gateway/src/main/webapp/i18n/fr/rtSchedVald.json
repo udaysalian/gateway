@@ -1,0 +1,24 @@
+{
+    "netraApp": {
+        "rtSchedVald" : {
+            "home": {
+                "title": "RtSchedValds",
+                "createLabel": "Créer un nouveau Rt Sched Vald",
+                "createOrEditLabel": "Créer ou éditer un Rt Sched Vald"
+            },
+            "created": "Un nouveau Rt Sched Vald a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Rt Sched Vald avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Rt Sched Vald avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Rt Sched Vald {{ id }} ?"
+            },
+            "detail": {
+                "title": "Rt Sched Vald"
+            },
+            "validType": "Valid Type",
+            "updater": "Updater",
+            "updateTimeStamp": "Update Time Stamp",
+            "rtSched": "Rt Sched"
+        }
+    }
+}

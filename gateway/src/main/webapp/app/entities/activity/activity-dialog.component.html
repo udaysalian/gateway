@@ -1,0 +1,64 @@
+
+
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+        <h4 class="modal-title" id="myActivityLabel" jhiTranslate="netraApp.activity.home.createOrEditLabel">Create or edit a Activity</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!activity.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="activity.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.activity.contrId" for="field_contrId">Contr Id</label>
+            <input type="text" class="form-control" name="contrId" id="field_contrId"
+                [(ngModel)]="activity.contrId"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.activity.activityNbr" for="field_activityNbr">Activity Nbr</label>
+            <input type="text" class="form-control" name="activityNbr" id="field_activityNbr"
+                [(ngModel)]="activity.activityNbr"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.activity.rcptLocNbr" for="field_rcptLocNbr">Rcpt Loc Nbr</label>
+            <input type="text" class="form-control" name="rcptLocNbr" id="field_rcptLocNbr"
+                [(ngModel)]="activity.rcptLocNbr"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.activity.dlvryLocNbr" for="field_dlvryLocNbr">Dlvry Loc Nbr</label>
+            <input type="text" class="form-control" name="dlvryLocNbr" id="field_dlvryLocNbr"
+                [(ngModel)]="activity.dlvryLocNbr"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.activity.updater" for="field_updater">Updater</label>
+            <input type="text" class="form-control" name="updater" id="field_updater"
+                [(ngModel)]="activity.updater"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.activity.updateTimeStamp" for="field_updateTimeStamp">Update Time Stamp</label>
+            <div class="input-group">
+                <input id="field_updateTimeStamp" type="datetime-local" class="form-control" name="updateTimeStamp" [(ngModel)]="activity.updateTimeStamp"
+                  />
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

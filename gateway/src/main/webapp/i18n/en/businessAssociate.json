@@ -1,0 +1,27 @@
+{
+    "netraApp": {
+        "businessAssociate" : {
+            "home": {
+                "title": "Business Associates",
+                "createLabel": "Create a new Business Associate",
+                "createOrEditLabel": "Create or edit a Business Associate"
+            },
+            "created": "A new Business Associate is created with identifier {{ param }}",
+            "updated": "A Business Associate is updated with identifier {{ param }}",
+            "deleted": "A Business Associate is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Business Associate {{ id }}?"
+            },
+            "detail": {
+                "title": "Business Associate"
+            },
+            "businessAssociateId": "Business Associate Id",
+            "baName": "Ba Name",
+            "baAbbr": "Ba Abbr",
+            "baNbr": "Ba Nbr",
+            "baDunsNbr": "Ba Duns Nbr",
+            "businessAssociateContact": "Business Associate Contact",
+            "businessAssociateAddress": "Business Associate Address"
+        }
+    }
+}

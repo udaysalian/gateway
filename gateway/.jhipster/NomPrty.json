@@ -1,0 +1,54 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "nom",
+            "otherEntityName": "nom",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "contrId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "activityNbr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "gasDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "prtyTp",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prtyQty",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "subType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dirOfFlow",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "updater",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "updateTimeStamp",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170321041448",
+    "entityTableName": "nom_prty",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

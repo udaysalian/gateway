@@ -1,0 +1,73 @@
+
+<div *ngIf="nom">
+    <h2><span jhiTranslate="netraApp.nom.detail.title">Nom</span> {{nom.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row">
+        <dt><span jhiTranslate="netraApp.nom.activityNbr">Activity Nbr</span></dt>
+        <dd>
+            <span>{{nom.activityNbr}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.nom.gasDate">Gas Date</span></dt>
+        <dd>
+            <span>{{nom.gasDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.nom.reqRcptQty">Req Rcpt Qty</span></dt>
+        <dd>
+            <span>{{nom.reqRcptQty}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.nom.reqDlvryQty">Req Dlvry Qty</span></dt>
+        <dd>
+            <span>{{nom.reqDlvryQty}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.nom.oldSchdRcptQty">Old Schd Rcpt Qty</span></dt>
+        <dd>
+            <span>{{nom.oldSchdRcptQty}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.nom.newSchdRcptQty">New Schd Rcpt Qty</span></dt>
+        <dd>
+            <span>{{nom.newSchdRcptQty}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.nom.oldSchdDlvryQty">Old Schd Dlvry Qty</span></dt>
+        <dd>
+            <span>{{nom.oldSchdDlvryQty}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.nom.newSchdDlvryQty">New Schd Dlvry Qty</span></dt>
+        <dd>
+            <span>{{nom.newSchdDlvryQty}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.nom.updater">Updater</span></dt>
+        <dd>
+            <span>{{nom.updater}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.nom.updateTimeStamp">Update Time Stamp</span></dt>
+        <dd>
+            <span>{{nom.updateTimeStamp | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.nom.activity">Activity</span></dt>
+        <dd>
+            <div *ngIf="nom.activity">
+                <a [routerLink]="['/activity', nom.activity?.id]">{{nom.activity?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="netraApp.nom.contr">Contr</span></dt>
+        <dd>
+            <div *ngIf="nom.contr">
+                <a [routerLink]="['/contract', nom.contr?.id]">{{nom.contr?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'nom/'+ nom.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

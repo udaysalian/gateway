@@ -1,0 +1,74 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "activity",
+            "otherEntityName": "activity",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "nom"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "contr",
+            "otherEntityName": "contract",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "nom"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "prty",
+            "otherEntityName": "nomPrty",
+            "otherEntityRelationshipName": "nom"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "activityNbr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "gasDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "reqRcptQty",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "reqDlvryQty",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "oldSchdRcptQty",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "newSchdRcptQty",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "oldSchdDlvryQty",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "newSchdDlvryQty",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "updater",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "updateTimeStamp",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170321041448",
+    "entityTableName": "nom",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

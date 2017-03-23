@@ -1,0 +1,81 @@
+
+
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+        <h4 class="modal-title" id="myBusinessAssociateContactLabel" jhiTranslate="netraApp.businessAssociateContact.home.createOrEditLabel">Create or edit a Business Associate Contact</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!businessAssociateContact.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="businessAssociateContact.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.businessAssociateContact.businessAssociateContactId" for="field_businessAssociateContactId">Business Associate Contact Id</label>
+            <input type="number" class="form-control" name="businessAssociateContactId" id="field_businessAssociateContactId"
+                [(ngModel)]="businessAssociateContact.businessAssociateContactId"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.businessAssociateContact.beginDate" for="field_beginDate">Begin Date</label>
+            <div class="input-group">
+                <input id="field_beginDate" type="text" class="form-control" name="beginDate" ngbDatepicker  #beginDateDp="ngbDatepicker" [(ngModel)]="businessAssociateContact.beginDate"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="beginDateDp.open()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.businessAssociateContact.endDate" for="field_endDate">End Date</label>
+            <div class="input-group">
+                <input id="field_endDate" type="text" class="form-control" name="endDate" ngbDatepicker  #endDateDp="ngbDatepicker" [(ngModel)]="businessAssociateContact.endDate"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="endDateDp.open()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label jhiTranslate="netraApp.businessAssociateContact.businessAssociate" for="field_businessAssociate">Business Associate</label>
+            <select class="form-control" id="field_businessAssociate" name="businessAssociate" [(ngModel)]="businessAssociateContact.businessAssociate" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="businessAssociateOption.id === businessAssociateContact.businessAssociate?.id ? businessAssociateContact.businessAssociate : businessAssociateOption" *ngFor="let businessAssociateOption of businessassociates; trackBy: trackBusinessAssociateById">{{businessAssociateOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="netraApp.businessAssociateContact.contact" for="field_contact">Contact</label>
+            <select class="form-control" id="field_contact" name="contact" [(ngModel)]="businessAssociateContact.contact">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="contactOption.id === businessAssociateContact.contact?.id ? businessAssociateContact.contact : contactOption" *ngFor="let contactOption of contacts; trackBy: trackContactById">{{contactOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="netraApp.businessAssociateContact.mailAddress" for="field_mailAddress">Mail Address</label>
+            <select class="form-control" id="field_mailAddress" name="mailAddress" [(ngModel)]="businessAssociateContact.mailAddress">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="businessAssociateAddressOption.id === businessAssociateContact.mailAddress?.id ? businessAssociateContact.mailAddress : businessAssociateAddressOption" *ngFor="let businessAssociateAddressOption of mailaddresses; trackBy: trackBusinessAssociateAddressById">{{businessAssociateAddressOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="netraApp.businessAssociateContact.deliveryAddress" for="field_deliveryAddress">Delivery Address</label>
+            <select class="form-control" id="field_deliveryAddress" name="deliveryAddress" [(ngModel)]="businessAssociateContact.deliveryAddress">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="businessAssociateAddressOption.id === businessAssociateContact.deliveryAddress?.id ? businessAssociateContact.deliveryAddress : businessAssociateAddressOption" *ngFor="let businessAssociateAddressOption of deliveryaddresses; trackBy: trackBusinessAssociateAddressById">{{businessAssociateAddressOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

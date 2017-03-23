@@ -1,0 +1,24 @@
+{
+    "netraApp": {
+        "section" : {
+            "home": {
+                "title": "Sections",
+                "createLabel": "नया Section बनाएँ",
+                "createOrEditLabel": "Section बनाएँ या संपादित करें"
+            },
+            "created": "एक नया Section [identifier: {{ param }}] तैयार है",
+            "updated": "एक Section [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Section [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "Section [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Section"
+            },
+            "sectionId": "Section Id",
+            "description": "Description",
+            "sectionType": "Section Type",
+            "sectionLocation": "Section Location"
+        }
+    }
+}

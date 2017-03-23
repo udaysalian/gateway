@@ -1,0 +1,39 @@
+
+<div *ngIf="contact">
+    <h2><span jhiTranslate="netraApp.contact.detail.title">Contact</span> {{contact.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row">
+        <dt><span jhiTranslate="netraApp.contact.contactId">Contact Id</span></dt>
+        <dd>
+            <span>{{contact.contactId}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.contact.firstName">First Name</span></dt>
+        <dd>
+            <span>{{contact.firstName}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.contact.lastName">Last Name</span></dt>
+        <dd>
+            <span>{{contact.lastName}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.contact.businessAssociate">Business Associate</span></dt>
+        <dd>
+            <div *ngIf="contact.businessAssociate">
+                <a [routerLink]="['/business-associate', contact.businessAssociate?.id]">{{contact.businessAssociate?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'contact/'+ contact.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

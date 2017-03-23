@@ -1,0 +1,30 @@
+{
+    "netraApp": {
+        "schedNom" : {
+            "home": {
+                "title": "SchedNoms",
+                "createLabel": "Créer un nouveau Sched Nom",
+                "createOrEditLabel": "Créer ou éditer un Sched Nom"
+            },
+            "created": "Un nouveau Sched Nom a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Sched Nom avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Sched Nom avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Sched Nom {{ id }} ?"
+            },
+            "detail": {
+                "title": "Sched Nom"
+            },
+            "contrId": "Contr Id",
+            "activityNbr": "Activity Nbr",
+            "gasDate": "Gas Date",
+            "oldSchdRcptQty": "Old Schd Rcpt Qty",
+            "newSchdRcptQty": "New Schd Rcpt Qty",
+            "oldSchdDlvryQty": "Old Schd Dlvry Qty",
+            "newSchdDlvryQty": "New Schd Dlvry Qty",
+            "upater": "Upater",
+            "updateTimeStamp": "Update Time Stamp",
+            "schedEvent": "Sched Event"
+        }
+    }
+}

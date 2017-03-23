@@ -1,0 +1,41 @@
+
+<div *ngIf="businessAssociate">
+    <h2><span jhiTranslate="netraApp.businessAssociate.detail.title">Business Associate</span> {{businessAssociate.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row">
+        <dt><span jhiTranslate="netraApp.businessAssociate.businessAssociateId">Business Associate Id</span></dt>
+        <dd>
+            <span>{{businessAssociate.businessAssociateId}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.businessAssociate.baName">Ba Name</span></dt>
+        <dd>
+            <span>{{businessAssociate.baName}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.businessAssociate.baAbbr">Ba Abbr</span></dt>
+        <dd>
+            <span>{{businessAssociate.baAbbr}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.businessAssociate.baNbr">Ba Nbr</span></dt>
+        <dd>
+            <span>{{businessAssociate.baNbr}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.businessAssociate.baDunsNbr">Ba Duns Nbr</span></dt>
+        <dd>
+            <span>{{businessAssociate.baDunsNbr}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'business-associate/'+ businessAssociate.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

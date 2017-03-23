@@ -1,0 +1,28 @@
+{
+    "netraApp": {
+        "businessAssociateAddress" : {
+            "home": {
+                "title": "BusinessAssociateAddresses",
+                "createLabel": "नया Business Associate Address बनाएँ",
+                "createOrEditLabel": "Business Associate Address बनाएँ या संपादित करें"
+            },
+            "created": "एक नया Business Associate Address [identifier: {{ param }}] तैयार है",
+            "updated": "एक Business Associate Address [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Business Associate Address [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "Business Associate Address [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Business Associate Address"
+            },
+            "businessAssociateAddressId": "Business Associate Address Id",
+            "addLine1": "Add Line 1",
+            "addressNbr": "Address Nbr",
+            "addLine2": "Add Line 2",
+            "city": "City",
+            "state": "State",
+            "zipCode": "Zip Code",
+            "businessAssociate": "Business Associate"
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "netraApp": {
+        "contrLoc" : {
+            "home": {
+                "title": "ContrLocs",
+                "createLabel": "नया Contr Loc बनाएँ",
+                "createOrEditLabel": "Contr Loc बनाएँ या संपादित करें"
+            },
+            "created": "एक नया Contr Loc [identifier: {{ param }}] तैयार है",
+            "updated": "एक Contr Loc [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Contr Loc [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "Contr Loc [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Contr Loc"
+            },
+            "location": "Location",
+            "updater": "Updater",
+            "updateTimeStamp": "Update Time Stamp",
+            "contract": "Contract"
+        }
+    }
+}

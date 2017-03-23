@@ -1,0 +1,24 @@
+{
+    "netraApp": {
+        "schedGrp" : {
+            "home": {
+                "title": "SchedGrps",
+                "createLabel": "नया Sched Grp बनाएँ",
+                "createOrEditLabel": "Sched Grp बनाएँ या संपादित करें"
+            },
+            "created": "एक नया Sched Grp [identifier: {{ param }}] तैयार है",
+            "updated": "एक Sched Grp [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Sched Grp [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "Sched Grp [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Sched Grp"
+            },
+            "schedGrpId": "Sched Grp Id",
+            "description": "Description",
+            "rcptSection": "Rcpt Section",
+            "dlvrySection": "Dlvry Section"
+        }
+    }
+}

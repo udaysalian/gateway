@@ -1,0 +1,87 @@
+<div>
+    <h2><span jhiTranslate="netraApp.nom.home.title">Noms</span>
+        <button class="btn btn-primary float-xs-right create-nom" [routerLink]="['/', { outlets: { popup: ['nom-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="netraApp.nom.home.createLabel">
+            Create new Nom
+            </span>
+        </button></h2>
+    <jhi-alert></jhi-alert>
+
+    <div class="container-fluid">
+        <div class="row">
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="noms">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="netraApp.nom.activityNbr">Activity Nbr</span></th>
+            <th><span jhiTranslate="netraApp.nom.gasDate">Gas Date</span></th>
+            <th><span jhiTranslate="netraApp.nom.reqRcptQty">Req Rcpt Qty</span></th>
+            <th><span jhiTranslate="netraApp.nom.reqDlvryQty">Req Dlvry Qty</span></th>
+            <th><span jhiTranslate="netraApp.nom.oldSchdRcptQty">Old Schd Rcpt Qty</span></th>
+            <th><span jhiTranslate="netraApp.nom.newSchdRcptQty">New Schd Rcpt Qty</span></th>
+            <th><span jhiTranslate="netraApp.nom.oldSchdDlvryQty">Old Schd Dlvry Qty</span></th>
+            <th><span jhiTranslate="netraApp.nom.newSchdDlvryQty">New Schd Dlvry Qty</span></th>
+            <th><span jhiTranslate="netraApp.nom.updater">Updater</span></th>
+            <th><span jhiTranslate="netraApp.nom.updateTimeStamp">Update Time Stamp</span></th>
+            <th><span jhiTranslate="netraApp.nom.activity">Activity</span></th>
+            <th><span jhiTranslate="netraApp.nom.contr">Contr</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let nom of noms ;trackBy: trackId">
+                <td><a [routerLink]="['../nom', nom.id ]">{{nom.id}}</a></td>
+                <td>{{nom.activityNbr}}</td>
+                <td>{{nom.gasDate | date:'mediumDate'}}</td>
+                <td>{{nom.reqRcptQty}}</td>
+                <td>{{nom.reqDlvryQty}}</td>
+                <td>{{nom.oldSchdRcptQty}}</td>
+                <td>{{nom.newSchdRcptQty}}</td>
+                <td>{{nom.oldSchdDlvryQty}}</td>
+                <td>{{nom.newSchdDlvryQty}}</td>
+                <td>{{nom.updater}}</td>
+                <td>{{nom.updateTimeStamp | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="nom.activity">
+                        <a [routerLink]="['../activity', nom.activity?.id ]" >{{nom.activity?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="nom.contr">
+                        <a [routerLink]="['../contract', nom.contr?.id ]" >{{nom.contr?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-xs-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../nom', nom.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'nom/'+ nom.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'nom/'+ nom.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

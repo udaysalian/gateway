@@ -1,0 +1,24 @@
+{
+    "netraApp": {
+        "schedGrp" : {
+            "home": {
+                "title": "Sched Grps",
+                "createLabel": "Create a new Sched Grp",
+                "createOrEditLabel": "Create or edit a Sched Grp"
+            },
+            "created": "A new Sched Grp is created with identifier {{ param }}",
+            "updated": "A Sched Grp is updated with identifier {{ param }}",
+            "deleted": "A Sched Grp is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Sched Grp {{ id }}?"
+            },
+            "detail": {
+                "title": "Sched Grp"
+            },
+            "schedGrpId": "Sched Grp Id",
+            "description": "Description",
+            "rcptSection": "Rcpt Section",
+            "dlvrySection": "Dlvry Section"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "netraApp": {
+        "activity" : {
+            "home": {
+                "title": "Activities",
+                "createLabel": "नया Activity बनाएँ",
+                "createOrEditLabel": "Activity बनाएँ या संपादित करें"
+            },
+            "created": "एक नया Activity [identifier: {{ param }}] तैयार है",
+            "updated": "एक Activity [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Activity [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "Activity [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Activity"
+            },
+            "contrId": "Contr Id",
+            "activityNbr": "Activity Nbr",
+            "rcptLocNbr": "Rcpt Loc Nbr",
+            "dlvryLocNbr": "Dlvry Loc Nbr",
+            "updater": "Updater",
+            "updateTimeStamp": "Update Time Stamp"
+        }
+    }
+}

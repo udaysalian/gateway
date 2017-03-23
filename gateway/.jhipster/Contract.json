@@ -1,0 +1,44 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "rtSched",
+            "otherEntityName": "rtSched",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "contract"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "contrLoc",
+            "otherEntityName": "contrLoc",
+            "otherEntityRelationshipName": "contract"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "businessAssociate",
+            "otherEntityName": "businessAssociate",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "contrId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "updater",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "updateTimeStamp",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170321041448",
+    "entityTableName": "contract",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

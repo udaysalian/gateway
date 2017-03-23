@@ -1,0 +1,30 @@
+{
+    "netraApp": {
+        "nomPrty" : {
+            "home": {
+                "title": "NomPrties",
+                "createLabel": "Créer un nouveau Nom Prty",
+                "createOrEditLabel": "Créer ou éditer un Nom Prty"
+            },
+            "created": "Un nouveau Nom Prty a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Nom Prty avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Nom Prty avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Nom Prty {{ id }} ?"
+            },
+            "detail": {
+                "title": "Nom Prty"
+            },
+            "contrId": "Contr Id",
+            "activityNbr": "Activity Nbr",
+            "gasDate": "Gas Date",
+            "prtyTp": "Prty Tp",
+            "prtyQty": "Prty Qty",
+            "subType": "Sub Type",
+            "dirOfFlow": "Dir Of Flow",
+            "updater": "Updater",
+            "updateTimeStamp": "Update Time Stamp",
+            "nom": "Nom"
+        }
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "businessAssociate",
+            "otherEntityName": "businessAssociate",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "contactId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "firstName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lastName",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170321041448",
+    "entityTableName": "contact",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

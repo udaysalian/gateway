@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity NomPrty.
+    -->
+    <changeSet id="20170321041448-1" author="jhipster">
+        <createTable tableName="nom_prty">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="contr_id" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="activity_nbr" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="gas_date" type="date">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="prty_tp" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="prty_qty" type="integer">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="sub_type" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="dir_of_flow" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="updater" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="update_time_stamp" type="timestamp">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="nom_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="nom_prty" columnName="update_time_stamp" columnDataType="datetime"/>
+        
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,36 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "rcptSection",
+            "otherEntityName": "section",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "schedGrp"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "dlvrySection",
+            "otherEntityName": "section",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "schedGrp"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "schedGrpId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170321041448",
+    "entityTableName": "sched_grp",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

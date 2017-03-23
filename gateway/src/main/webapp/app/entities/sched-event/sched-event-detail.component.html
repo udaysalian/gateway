@@ -1,0 +1,55 @@
+
+<div *ngIf="schedEvent">
+    <h2><span jhiTranslate="netraApp.schedEvent.detail.title">Sched Event</span> {{schedEvent.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row">
+        <dt><span jhiTranslate="netraApp.schedEvent.eventId">Event Id</span></dt>
+        <dd>
+            <span>{{schedEvent.eventId}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.schedEvent.workingCapacity">Working Capacity</span></dt>
+        <dd>
+            <span>{{schedEvent.workingCapacity}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.schedEvent.adjWorkingCapacity">Adj Working Capacity</span></dt>
+        <dd>
+            <span>{{schedEvent.adjWorkingCapacity}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.schedEvent.status">Status</span></dt>
+        <dd>
+            <span>{{schedEvent.status}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.schedEvent.eventType">Event Type</span></dt>
+        <dd>
+            <span>{{schedEvent.eventType}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.schedEvent.updater">Updater</span></dt>
+        <dd>
+            <span>{{schedEvent.updater}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.schedEvent.updateTimestamp">Update Timestamp</span></dt>
+        <dd>
+            <span>{{schedEvent.updateTimestamp | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.schedEvent.schedGrp">Sched Grp</span></dt>
+        <dd>
+            <div *ngIf="schedEvent.schedGrp">
+                <a [routerLink]="['/sched-grp', schedEvent.schedGrp?.id]">{{schedEvent.schedGrp?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'sched-event/'+ schedEvent.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

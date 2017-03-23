@@ -1,0 +1,41 @@
+
+<div *ngIf="schedGrp">
+    <h2><span jhiTranslate="netraApp.schedGrp.detail.title">Sched Grp</span> {{schedGrp.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row">
+        <dt><span jhiTranslate="netraApp.schedGrp.schedGrpId">Sched Grp Id</span></dt>
+        <dd>
+            <span>{{schedGrp.schedGrpId}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.schedGrp.description">Description</span></dt>
+        <dd>
+            <span>{{schedGrp.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.schedGrp.rcptSection">Rcpt Section</span></dt>
+        <dd>
+            <div *ngIf="schedGrp.rcptSection">
+                <a [routerLink]="['/section', schedGrp.rcptSection?.id]">{{schedGrp.rcptSection?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="netraApp.schedGrp.dlvrySection">Dlvry Section</span></dt>
+        <dd>
+            <div *ngIf="schedGrp.dlvrySection">
+                <a [routerLink]="['/section', schedGrp.dlvrySection?.id]">{{schedGrp.dlvrySection?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'sched-grp/'+ schedGrp.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

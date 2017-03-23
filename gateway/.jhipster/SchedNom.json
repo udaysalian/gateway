@@ -1,0 +1,56 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "schedEvent",
+            "otherEntityName": "schedEvent",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "schedNom"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "contrId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "activityNbr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "gasDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "oldSchdRcptQty",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "newSchdRcptQty",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "oldSchdDlvryQty",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "newSchdDlvryQty",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "upater",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "updateTimeStamp",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170321041448",
+    "entityTableName": "sched_nom",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

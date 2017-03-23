@@ -1,0 +1,30 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "rtSchedVald",
+            "otherEntityName": "rtSchedVald",
+            "otherEntityRelationshipName": "rtSched"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "rsType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "updater",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "updateTimeStamp",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170321041448",
+    "entityTableName": "rt_sched",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

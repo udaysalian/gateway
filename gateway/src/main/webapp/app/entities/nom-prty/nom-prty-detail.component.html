@@ -1,0 +1,63 @@
+
+<div *ngIf="nomPrty">
+    <h2><span jhiTranslate="netraApp.nomPrty.detail.title">Nom Prty</span> {{nomPrty.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row">
+        <dt><span jhiTranslate="netraApp.nomPrty.contrId">Contr Id</span></dt>
+        <dd>
+            <span>{{nomPrty.contrId}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.nomPrty.activityNbr">Activity Nbr</span></dt>
+        <dd>
+            <span>{{nomPrty.activityNbr}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.nomPrty.gasDate">Gas Date</span></dt>
+        <dd>
+            <span>{{nomPrty.gasDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.nomPrty.prtyTp">Prty Tp</span></dt>
+        <dd>
+            <span>{{nomPrty.prtyTp}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.nomPrty.prtyQty">Prty Qty</span></dt>
+        <dd>
+            <span>{{nomPrty.prtyQty}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.nomPrty.subType">Sub Type</span></dt>
+        <dd>
+            <span>{{nomPrty.subType}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.nomPrty.dirOfFlow">Dir Of Flow</span></dt>
+        <dd>
+            <span>{{nomPrty.dirOfFlow}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.nomPrty.updater">Updater</span></dt>
+        <dd>
+            <span>{{nomPrty.updater}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.nomPrty.updateTimeStamp">Update Time Stamp</span></dt>
+        <dd>
+            <span>{{nomPrty.updateTimeStamp | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.nomPrty.nom">Nom</span></dt>
+        <dd>
+            <div *ngIf="nomPrty.nom">
+                <a [routerLink]="['/nom', nomPrty.nom?.id]">{{nomPrty.nom?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'nom-prty/'+ nomPrty.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170321041448_added_entity_NomPrty.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170321041448_added_entity_Activity.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170321041448_added_entity_BusinessAssociateAddress.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170321041448_added_entity_BusinessAssociateContact.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170321041448_added_entity_Contact.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170321041448_added_entity_Contract.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170321041448_added_entity_ContrLoc.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170321041448_added_entity_Nom.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170321041448_added_entity_BusinessAssociate.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170321041448_added_entity_RtSched.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170321041448_added_entity_RtSchedVald.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170321041448_added_entity_SchedEvent.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170321041448_added_entity_SchedGrp.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170321041448_added_entity_SchedNom.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170321041448_added_entity_Section.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170321041448_added_entity_SectionLocation.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="classpath:config/liquibase/changelog/20170321041448_added_entity_constraints_NomPrty.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170321041448_added_entity_constraints_BusinessAssociateAddress.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170321041448_added_entity_constraints_BusinessAssociateContact.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170321041448_added_entity_constraints_Contact.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170321041448_added_entity_constraints_Contract.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170321041448_added_entity_constraints_ContrLoc.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170321041448_added_entity_constraints_Nom.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170321041448_added_entity_constraints_RtSchedVald.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170321041448_added_entity_constraints_SchedEvent.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170321041448_added_entity_constraints_SchedGrp.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170321041448_added_entity_constraints_SchedNom.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20170321041448_added_entity_constraints_SectionLocation.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+</databaseChangeLog>

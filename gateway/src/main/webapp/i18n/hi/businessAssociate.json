@@ -1,0 +1,27 @@
+{
+    "netraApp": {
+        "businessAssociate" : {
+            "home": {
+                "title": "BusinessAssociates",
+                "createLabel": "नया Business Associate बनाएँ",
+                "createOrEditLabel": "Business Associate बनाएँ या संपादित करें"
+            },
+            "created": "एक नया Business Associate [identifier: {{ param }}] तैयार है",
+            "updated": "एक Business Associate [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Business Associate [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "Business Associate [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Business Associate"
+            },
+            "businessAssociateId": "Business Associate Id",
+            "baName": "Ba Name",
+            "baAbbr": "Ba Abbr",
+            "baNbr": "Ba Nbr",
+            "baDunsNbr": "Ba Duns Nbr",
+            "businessAssociateContact": "Business Associate Contact",
+            "businessAssociateAddress": "Business Associate Address"
+        }
+    }
+}

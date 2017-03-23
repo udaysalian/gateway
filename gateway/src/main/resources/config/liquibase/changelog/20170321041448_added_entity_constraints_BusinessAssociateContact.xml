@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity BusinessAssociateContact.
+    -->
+    <changeSet id="20170321041448-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="business_associate_id"
+                                 baseTableName="business_associate_contact"
+                                 constraintName="fk_business_associate_contact_business_associate_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="business_associate"/>
+
+        <addForeignKeyConstraint baseColumnNames="contact_id"
+                                 baseTableName="business_associate_contact"
+                                 constraintName="fk_business_associate_contact_contact_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="contact"/>
+
+        <addForeignKeyConstraint baseColumnNames="mail_address_id"
+                                 baseTableName="business_associate_contact"
+                                 constraintName="fk_business_associate_contact_mail_address_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="business_associate_address"/>
+
+        <addForeignKeyConstraint baseColumnNames="delivery_address_id"
+                                 baseTableName="business_associate_contact"
+                                 constraintName="fk_business_associate_contact_delivery_address_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="business_associate_address"/>
+
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,31 @@
+
+<div *ngIf="sectionLocation">
+    <h2><span jhiTranslate="netraApp.sectionLocation.detail.title">Section Location</span> {{sectionLocation.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row">
+        <dt><span jhiTranslate="netraApp.sectionLocation.locationNbr">Location Nbr</span></dt>
+        <dd>
+            <span>{{sectionLocation.locationNbr}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.sectionLocation.section">Section</span></dt>
+        <dd>
+            <div *ngIf="sectionLocation.section">
+                <a [routerLink]="['/section', sectionLocation.section?.id]">{{sectionLocation.section?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'section-location/'+ sectionLocation.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,93 @@
+
+
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+        <h4 class="modal-title" id="myNomPrtyLabel" jhiTranslate="netraApp.nomPrty.home.createOrEditLabel">Create or edit a Nom Prty</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!nomPrty.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="nomPrty.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.nomPrty.contrId" for="field_contrId">Contr Id</label>
+            <input type="text" class="form-control" name="contrId" id="field_contrId"
+                [(ngModel)]="nomPrty.contrId"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.nomPrty.activityNbr" for="field_activityNbr">Activity Nbr</label>
+            <input type="text" class="form-control" name="activityNbr" id="field_activityNbr"
+                [(ngModel)]="nomPrty.activityNbr"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.nomPrty.gasDate" for="field_gasDate">Gas Date</label>
+            <div class="input-group">
+                <input id="field_gasDate" type="text" class="form-control" name="gasDate" ngbDatepicker  #gasDateDp="ngbDatepicker" [(ngModel)]="nomPrty.gasDate"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="gasDateDp.open()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.nomPrty.prtyTp" for="field_prtyTp">Prty Tp</label>
+            <input type="text" class="form-control" name="prtyTp" id="field_prtyTp"
+                [(ngModel)]="nomPrty.prtyTp"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.nomPrty.prtyQty" for="field_prtyQty">Prty Qty</label>
+            <input type="number" class="form-control" name="prtyQty" id="field_prtyQty"
+                [(ngModel)]="nomPrty.prtyQty"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.nomPrty.subType" for="field_subType">Sub Type</label>
+            <input type="text" class="form-control" name="subType" id="field_subType"
+                [(ngModel)]="nomPrty.subType"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.nomPrty.dirOfFlow" for="field_dirOfFlow">Dir Of Flow</label>
+            <input type="text" class="form-control" name="dirOfFlow" id="field_dirOfFlow"
+                [(ngModel)]="nomPrty.dirOfFlow"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.nomPrty.updater" for="field_updater">Updater</label>
+            <input type="text" class="form-control" name="updater" id="field_updater"
+                [(ngModel)]="nomPrty.updater"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.nomPrty.updateTimeStamp" for="field_updateTimeStamp">Update Time Stamp</label>
+            <div class="input-group">
+                <input id="field_updateTimeStamp" type="datetime-local" class="form-control" name="updateTimeStamp" [(ngModel)]="nomPrty.updateTimeStamp"
+                  />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label jhiTranslate="netraApp.nomPrty.nom" for="field_nom">Nom</label>
+            <select class="form-control" id="field_nom" name="nom" [(ngModel)]="nomPrty.nom" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="nomOption.id === nomPrty.nom?.id ? nomPrty.nom : nomOption" *ngFor="let nomOption of noms; trackBy: trackNomById">{{nomOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

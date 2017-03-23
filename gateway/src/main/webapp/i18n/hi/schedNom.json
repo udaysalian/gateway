@@ -1,0 +1,30 @@
+{
+    "netraApp": {
+        "schedNom" : {
+            "home": {
+                "title": "SchedNoms",
+                "createLabel": "नया Sched Nom बनाएँ",
+                "createOrEditLabel": "Sched Nom बनाएँ या संपादित करें"
+            },
+            "created": "एक नया Sched Nom [identifier: {{ param }}] तैयार है",
+            "updated": "एक Sched Nom [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Sched Nom [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "Sched Nom [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Sched Nom"
+            },
+            "contrId": "Contr Id",
+            "activityNbr": "Activity Nbr",
+            "gasDate": "Gas Date",
+            "oldSchdRcptQty": "Old Schd Rcpt Qty",
+            "newSchdRcptQty": "New Schd Rcpt Qty",
+            "oldSchdDlvryQty": "Old Schd Dlvry Qty",
+            "newSchdDlvryQty": "New Schd Dlvry Qty",
+            "upater": "Upater",
+            "updateTimeStamp": "Update Time Stamp",
+            "schedEvent": "Sched Event"
+        }
+    }
+}

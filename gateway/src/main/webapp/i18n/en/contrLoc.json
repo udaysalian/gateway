@@ -1,0 +1,24 @@
+{
+    "netraApp": {
+        "contrLoc" : {
+            "home": {
+                "title": "Contr Locs",
+                "createLabel": "Create a new Contr Loc",
+                "createOrEditLabel": "Create or edit a Contr Loc"
+            },
+            "created": "A new Contr Loc is created with identifier {{ param }}",
+            "updated": "A Contr Loc is updated with identifier {{ param }}",
+            "deleted": "A Contr Loc is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Contr Loc {{ id }}?"
+            },
+            "detail": {
+                "title": "Contr Loc"
+            },
+            "location": "Location",
+            "updater": "Updater",
+            "updateTimeStamp": "Update Time Stamp",
+            "contract": "Contract"
+        }
+    }
+}

@@ -1,0 +1,55 @@
+
+<div *ngIf="businessAssociateAddress">
+    <h2><span jhiTranslate="netraApp.businessAssociateAddress.detail.title">Business Associate Address</span> {{businessAssociateAddress.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row">
+        <dt><span jhiTranslate="netraApp.businessAssociateAddress.businessAssociateAddressId">Business Associate Address Id</span></dt>
+        <dd>
+            <span>{{businessAssociateAddress.businessAssociateAddressId}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.businessAssociateAddress.addLine1">Add Line 1</span></dt>
+        <dd>
+            <span>{{businessAssociateAddress.addLine1}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.businessAssociateAddress.addressNbr">Address Nbr</span></dt>
+        <dd>
+            <span>{{businessAssociateAddress.addressNbr}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.businessAssociateAddress.addLine2">Add Line 2</span></dt>
+        <dd>
+            <span>{{businessAssociateAddress.addLine2}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.businessAssociateAddress.city">City</span></dt>
+        <dd>
+            <span>{{businessAssociateAddress.city}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.businessAssociateAddress.state">State</span></dt>
+        <dd>
+            <span>{{businessAssociateAddress.state}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.businessAssociateAddress.zipCode">Zip Code</span></dt>
+        <dd>
+            <span>{{businessAssociateAddress.zipCode}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.businessAssociateAddress.businessAssociate">Business Associate</span></dt>
+        <dd>
+            <div *ngIf="businessAssociateAddress.businessAssociate">
+                <a [routerLink]="['/business-associate', businessAssociateAddress.businessAssociate?.id]">{{businessAssociateAddress.businessAssociate?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'business-associate-address/'+ businessAssociateAddress.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

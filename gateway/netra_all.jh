@@ -1,0 +1,191 @@
+
+entity BusinessAssociate {
+ businessAssociateId Long,	baName String,
+    baAbbr String,
+    baNbr  String,
+    baDunsNbr String  
+}
+
+entity BusinessAssociateAddress {
+businessAssociateAddressId Long,
+addLine1 String,
+addressNbr String,
+addLine2 String,
+city	String,
+state	String,
+zipCode String
+
+}
+
+entity Contact {
+ contactId Long, 
+ firstName String,
+lastName String
+}
+
+
+entity BusinessAssociateContact {
+ businessAssociateContactId Long,
+ beginDate LocalDate,
+ endDate LocalDate
+ 
+}
+
+relationship OneToMany {
+	BusinessAssociate {businessAssociateContact} to BusinessAssociateContact
+}
+relationship OneToMany {
+BusinessAssociate {businessAssociateAddress} to BusinessAssociateAddress
+}
+relationship OneToOne {
+BusinessAssociateContact {contact} to Contact
+}
+relationship OneToOne {
+ BusinessAssociateContact {mailAddress} to BusinessAssociateAddress
+}
+relationship OneToOne {
+  BusinessAssociateContact {deliveryAddress} to BusinessAssociateAddress 
+}
+
+relationship ManyToOne {
+Contact{businessAssociate} to BusinessAssociate
+}
+relationship ManyToOne {
+Contract{businessAssociate} to BusinessAssociate 
+}
+entity Nom {
+
+ activityNbr String,
+ gasDate LocalDate,
+ reqRcptQty Integer,
+ reqDlvryQty Integer,
+ oldSchdRcptQty Integer,
+ newSchdRcptQty Integer,
+ oldSchdDlvryQty Integer,
+ newSchdDlvryQty Integer,
+ updater	String,
+ updateTimeStamp ZonedDateTime
+}
+
+entity Activity {
+contrId String,
+activityNbr String,
+rcptLocNbr String,
+dlvryLocNbr String
+ updater	String,
+ updateTimeStamp ZonedDateTime
+}
+
+entity RtSched {
+rsType String,
+ updater	String,
+ updateTimeStamp ZonedDateTime
+}
+
+entity RtSchedVald{
+validType String,
+updater	String,
+updateTimeStamp ZonedDateTime
+}
+
+entity NomPrty {
+contrId String,
+ activityNbr String,
+ gasDate LocalDate,
+ prtyTp String,
+ prtyQty Integer,
+ subType String,
+ dirOfFlow String,
+  updater	String,
+  updateTimeStamp ZonedDateTime
+}
+
+entity Contract {
+contrId String,
+ updater	String,
+ updateTimeStamp ZonedDateTime
+}
+
+entity ContrLoc {
+  location String,
+   updater	String,
+   updateTimeStamp ZonedDateTime
+
+}
+relationship OneToOne {
+	Nom{activity} to Activity
+}
+relationship OneToMany {
+	Nom{prty} to NomPrty
+}
+relationship OneToMany {
+	RtSched{rtSchedVald} to RtSchedVald
+}
+relationship OneToMany {
+	Contract{contrLoc} to ContrLoc
+}
+relationship OneToOne {
+	Nom{contr} to Contract
+}
+relationship OneToOne {
+	Contract{rtSched} to RtSched
+}
+
+ entity SchedNom {
+ contrId String,
+ activityNbr String,
+ gasDate LocalDate,
+ oldSchdRcptQty Integer,
+ newSchdRcptQty Integer,
+ oldSchdDlvryQty Integer,
+ newSchdDlvryQty Integer,
+ upater	String,
+ updateTimeStamp ZonedDateTime
+
+}
+
+entity SchedEvent {
+   eventId Long,
+   workingCapacity Integer,
+   adjWorkingCapacity Integer,
+   status String,
+   eventType String,
+   updater String,
+   updateTimestamp ZonedDateTime
+}
+
+entity SchedGrp {
+	schedGrpId Long,
+    description String,
+
+}
+
+entity Section {
+	sectionId Long,
+    description String,
+    sectionType String,
+
+}
+entity SectionLocation {
+	locationNbr String
+}
+
+relationship OneToOne {
+	SchedNom{schedEvent} to SchedEvent
+}
+
+relationship OneToOne {
+	SchedEvent{schedGrp} to SchedGrp
+}
+relationship OneToOne {
+	SchedGrp{rcptSection} to Section,
+    SchedGrp{dlvrySection} to Section
+}
+
+
+relationship OneToMany {
+	Section{sectionLocation} to SectionLocation
+
+}
+
+

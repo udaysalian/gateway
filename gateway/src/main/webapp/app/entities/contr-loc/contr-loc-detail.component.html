@@ -1,0 +1,39 @@
+
+<div *ngIf="contrLoc">
+    <h2><span jhiTranslate="netraApp.contrLoc.detail.title">Contr Loc</span> {{contrLoc.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row">
+        <dt><span jhiTranslate="netraApp.contrLoc.location">Location</span></dt>
+        <dd>
+            <span>{{contrLoc.location}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.contrLoc.updater">Updater</span></dt>
+        <dd>
+            <span>{{contrLoc.updater}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.contrLoc.updateTimeStamp">Update Time Stamp</span></dt>
+        <dd>
+            <span>{{contrLoc.updateTimeStamp | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.contrLoc.contract">Contract</span></dt>
+        <dd>
+            <div *ngIf="contrLoc.contract">
+                <a [routerLink]="['/contract', contrLoc.contract?.id]">{{contrLoc.contract?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'contr-loc/'+ contrLoc.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

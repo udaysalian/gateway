@@ -1,0 +1,28 @@
+{
+    "netraApp": {
+        "businessAssociateAddress" : {
+            "home": {
+                "title": "Business Associate Addresses",
+                "createLabel": "Create a new Business Associate Address",
+                "createOrEditLabel": "Create or edit a Business Associate Address"
+            },
+            "created": "A new Business Associate Address is created with identifier {{ param }}",
+            "updated": "A Business Associate Address is updated with identifier {{ param }}",
+            "deleted": "A Business Associate Address is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Business Associate Address {{ id }}?"
+            },
+            "detail": {
+                "title": "Business Associate Address"
+            },
+            "businessAssociateAddressId": "Business Associate Address Id",
+            "addLine1": "Add Line 1",
+            "addressNbr": "Address Nbr",
+            "addLine2": "Add Line 2",
+            "city": "City",
+            "state": "State",
+            "zipCode": "Zip Code",
+            "businessAssociate": "Business Associate"
+        }
+    }
+}

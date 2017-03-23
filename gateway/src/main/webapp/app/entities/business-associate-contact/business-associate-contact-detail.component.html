@@ -1,0 +1,57 @@
+
+<div *ngIf="businessAssociateContact">
+    <h2><span jhiTranslate="netraApp.businessAssociateContact.detail.title">Business Associate Contact</span> {{businessAssociateContact.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row">
+        <dt><span jhiTranslate="netraApp.businessAssociateContact.businessAssociateContactId">Business Associate Contact Id</span></dt>
+        <dd>
+            <span>{{businessAssociateContact.businessAssociateContactId}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.businessAssociateContact.beginDate">Begin Date</span></dt>
+        <dd>
+            <span>{{businessAssociateContact.beginDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.businessAssociateContact.endDate">End Date</span></dt>
+        <dd>
+            <span>{{businessAssociateContact.endDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.businessAssociateContact.businessAssociate">Business Associate</span></dt>
+        <dd>
+            <div *ngIf="businessAssociateContact.businessAssociate">
+                <a [routerLink]="['/business-associate', businessAssociateContact.businessAssociate?.id]">{{businessAssociateContact.businessAssociate?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="netraApp.businessAssociateContact.contact">Contact</span></dt>
+        <dd>
+            <div *ngIf="businessAssociateContact.contact">
+                <a [routerLink]="['/contact', businessAssociateContact.contact?.id]">{{businessAssociateContact.contact?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="netraApp.businessAssociateContact.mailAddress">Mail Address</span></dt>
+        <dd>
+            <div *ngIf="businessAssociateContact.mailAddress">
+                <a [routerLink]="['/business-associate-address', businessAssociateContact.mailAddress?.id]">{{businessAssociateContact.mailAddress?.id}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="netraApp.businessAssociateContact.deliveryAddress">Delivery Address</span></dt>
+        <dd>
+            <div *ngIf="businessAssociateContact.deliveryAddress">
+                <a [routerLink]="['/business-associate-address', businessAssociateContact.deliveryAddress?.id]">{{businessAssociateContact.deliveryAddress?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'business-associate-contact/'+ businessAssociateContact.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,77 @@
+
+
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+        <h4 class="modal-title" id="mySchedEventLabel" jhiTranslate="netraApp.schedEvent.home.createOrEditLabel">Create or edit a Sched Event</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!schedEvent.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="schedEvent.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.schedEvent.eventId" for="field_eventId">Event Id</label>
+            <input type="number" class="form-control" name="eventId" id="field_eventId"
+                [(ngModel)]="schedEvent.eventId"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.schedEvent.workingCapacity" for="field_workingCapacity">Working Capacity</label>
+            <input type="number" class="form-control" name="workingCapacity" id="field_workingCapacity"
+                [(ngModel)]="schedEvent.workingCapacity"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.schedEvent.adjWorkingCapacity" for="field_adjWorkingCapacity">Adj Working Capacity</label>
+            <input type="number" class="form-control" name="adjWorkingCapacity" id="field_adjWorkingCapacity"
+                [(ngModel)]="schedEvent.adjWorkingCapacity"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.schedEvent.status" for="field_status">Status</label>
+            <input type="text" class="form-control" name="status" id="field_status"
+                [(ngModel)]="schedEvent.status"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.schedEvent.eventType" for="field_eventType">Event Type</label>
+            <input type="text" class="form-control" name="eventType" id="field_eventType"
+                [(ngModel)]="schedEvent.eventType"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.schedEvent.updater" for="field_updater">Updater</label>
+            <input type="text" class="form-control" name="updater" id="field_updater"
+                [(ngModel)]="schedEvent.updater"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.schedEvent.updateTimestamp" for="field_updateTimestamp">Update Timestamp</label>
+            <div class="input-group">
+                <input id="field_updateTimestamp" type="datetime-local" class="form-control" name="updateTimestamp" [(ngModel)]="schedEvent.updateTimestamp"
+                  />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label jhiTranslate="netraApp.schedEvent.schedGrp" for="field_schedGrp">Sched Grp</label>
+            <select class="form-control" id="field_schedGrp" name="schedGrp" [(ngModel)]="schedEvent.schedGrp">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="schedGrpOption.id === schedEvent.schedGrp?.id ? schedEvent.schedGrp : schedGrpOption" *ngFor="let schedGrpOption of schedgrps; trackBy: trackSchedGrpById">{{schedGrpOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

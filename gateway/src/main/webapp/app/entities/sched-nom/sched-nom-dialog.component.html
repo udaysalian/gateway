@@ -1,0 +1,93 @@
+
+
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+        <h4 class="modal-title" id="mySchedNomLabel" jhiTranslate="netraApp.schedNom.home.createOrEditLabel">Create or edit a Sched Nom</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!schedNom.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="schedNom.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.schedNom.contrId" for="field_contrId">Contr Id</label>
+            <input type="text" class="form-control" name="contrId" id="field_contrId"
+                [(ngModel)]="schedNom.contrId"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.schedNom.activityNbr" for="field_activityNbr">Activity Nbr</label>
+            <input type="text" class="form-control" name="activityNbr" id="field_activityNbr"
+                [(ngModel)]="schedNom.activityNbr"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.schedNom.gasDate" for="field_gasDate">Gas Date</label>
+            <div class="input-group">
+                <input id="field_gasDate" type="text" class="form-control" name="gasDate" ngbDatepicker  #gasDateDp="ngbDatepicker" [(ngModel)]="schedNom.gasDate"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="gasDateDp.open()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.schedNom.oldSchdRcptQty" for="field_oldSchdRcptQty">Old Schd Rcpt Qty</label>
+            <input type="number" class="form-control" name="oldSchdRcptQty" id="field_oldSchdRcptQty"
+                [(ngModel)]="schedNom.oldSchdRcptQty"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.schedNom.newSchdRcptQty" for="field_newSchdRcptQty">New Schd Rcpt Qty</label>
+            <input type="number" class="form-control" name="newSchdRcptQty" id="field_newSchdRcptQty"
+                [(ngModel)]="schedNom.newSchdRcptQty"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.schedNom.oldSchdDlvryQty" for="field_oldSchdDlvryQty">Old Schd Dlvry Qty</label>
+            <input type="number" class="form-control" name="oldSchdDlvryQty" id="field_oldSchdDlvryQty"
+                [(ngModel)]="schedNom.oldSchdDlvryQty"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.schedNom.newSchdDlvryQty" for="field_newSchdDlvryQty">New Schd Dlvry Qty</label>
+            <input type="number" class="form-control" name="newSchdDlvryQty" id="field_newSchdDlvryQty"
+                [(ngModel)]="schedNom.newSchdDlvryQty"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.schedNom.upater" for="field_upater">Upater</label>
+            <input type="text" class="form-control" name="upater" id="field_upater"
+                [(ngModel)]="schedNom.upater"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.schedNom.updateTimeStamp" for="field_updateTimeStamp">Update Time Stamp</label>
+            <div class="input-group">
+                <input id="field_updateTimeStamp" type="datetime-local" class="form-control" name="updateTimeStamp" [(ngModel)]="schedNom.updateTimeStamp"
+                  />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label jhiTranslate="netraApp.schedNom.schedEvent" for="field_schedEvent">Sched Event</label>
+            <select class="form-control" id="field_schedEvent" name="schedEvent" [(ngModel)]="schedNom.schedEvent">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="schedEventOption.id === schedNom.schedEvent?.id ? schedNom.schedEvent : schedEventOption" *ngFor="let schedEventOption of schedevents; trackBy: trackSchedEventById">{{schedEventOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

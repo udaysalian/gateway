@@ -1,0 +1,22 @@
+{
+    "netraApp": {
+        "sectionLocation" : {
+            "home": {
+                "title": "SectionLocations",
+                "createLabel": "Créer un nouveau Section Location",
+                "createOrEditLabel": "Créer ou éditer un Section Location"
+            },
+            "created": "Un nouveau Section Location a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Section Location avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Section Location avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Section Location {{ id }} ?"
+            },
+            "detail": {
+                "title": "Section Location"
+            },
+            "locationNbr": "Location Nbr",
+            "section": "Section"
+        }
+    }
+}

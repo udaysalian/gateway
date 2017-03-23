@@ -1,0 +1,11 @@
+version: '2'
+services:
+    netra-postgresql:
+        image: postgres:9.5.4
+        # volumes:
+        #     - ~/volumes/jhipster/netra/postgresql/:/var/lib/postgresql/
+        environment:
+            - POSTGRES_USER=netra
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

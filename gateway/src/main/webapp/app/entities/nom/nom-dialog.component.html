@@ -1,0 +1,106 @@
+
+
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+        <h4 class="modal-title" id="myNomLabel" jhiTranslate="netraApp.nom.home.createOrEditLabel">Create or edit a Nom</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!nom.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="nom.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.nom.activityNbr" for="field_activityNbr">Activity Nbr</label>
+            <input type="text" class="form-control" name="activityNbr" id="field_activityNbr"
+                [(ngModel)]="nom.activityNbr"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.nom.gasDate" for="field_gasDate">Gas Date</label>
+            <div class="input-group">
+                <input id="field_gasDate" type="text" class="form-control" name="gasDate" ngbDatepicker  #gasDateDp="ngbDatepicker" [(ngModel)]="nom.gasDate"
+                />
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" (click)="gasDateDp.open()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.nom.reqRcptQty" for="field_reqRcptQty">Req Rcpt Qty</label>
+            <input type="number" class="form-control" name="reqRcptQty" id="field_reqRcptQty"
+                [(ngModel)]="nom.reqRcptQty"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.nom.reqDlvryQty" for="field_reqDlvryQty">Req Dlvry Qty</label>
+            <input type="number" class="form-control" name="reqDlvryQty" id="field_reqDlvryQty"
+                [(ngModel)]="nom.reqDlvryQty"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.nom.oldSchdRcptQty" for="field_oldSchdRcptQty">Old Schd Rcpt Qty</label>
+            <input type="number" class="form-control" name="oldSchdRcptQty" id="field_oldSchdRcptQty"
+                [(ngModel)]="nom.oldSchdRcptQty"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.nom.newSchdRcptQty" for="field_newSchdRcptQty">New Schd Rcpt Qty</label>
+            <input type="number" class="form-control" name="newSchdRcptQty" id="field_newSchdRcptQty"
+                [(ngModel)]="nom.newSchdRcptQty"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.nom.oldSchdDlvryQty" for="field_oldSchdDlvryQty">Old Schd Dlvry Qty</label>
+            <input type="number" class="form-control" name="oldSchdDlvryQty" id="field_oldSchdDlvryQty"
+                [(ngModel)]="nom.oldSchdDlvryQty"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.nom.newSchdDlvryQty" for="field_newSchdDlvryQty">New Schd Dlvry Qty</label>
+            <input type="number" class="form-control" name="newSchdDlvryQty" id="field_newSchdDlvryQty"
+                [(ngModel)]="nom.newSchdDlvryQty"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.nom.updater" for="field_updater">Updater</label>
+            <input type="text" class="form-control" name="updater" id="field_updater"
+                [(ngModel)]="nom.updater"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.nom.updateTimeStamp" for="field_updateTimeStamp">Update Time Stamp</label>
+            <div class="input-group">
+                <input id="field_updateTimeStamp" type="datetime-local" class="form-control" name="updateTimeStamp" [(ngModel)]="nom.updateTimeStamp"
+                  />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label jhiTranslate="netraApp.nom.activity" for="field_activity">Activity</label>
+            <select class="form-control" id="field_activity" name="activity" [(ngModel)]="nom.activity">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="activityOption.id === nom.activity?.id ? nom.activity : activityOption" *ngFor="let activityOption of activities; trackBy: trackActivityById">{{activityOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label jhiTranslate="netraApp.nom.contr" for="field_contr">Contr</label>
+            <select class="form-control" id="field_contr" name="contr" [(ngModel)]="nom.contr">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="contractOption.id === nom.contr?.id ? nom.contr : contractOption" *ngFor="let contractOption of contrs; trackBy: trackContractById">{{contractOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

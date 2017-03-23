@@ -1,0 +1,26 @@
+{
+    "netraApp": {
+        "contract" : {
+            "home": {
+                "title": "Contracts",
+                "createLabel": "Créer un nouveau Contract",
+                "createOrEditLabel": "Créer ou éditer un Contract"
+            },
+            "created": "Un nouveau Contract a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Contract avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Contract avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Contract {{ id }} ?"
+            },
+            "detail": {
+                "title": "Contract"
+            },
+            "contrId": "Contr Id",
+            "updater": "Updater",
+            "updateTimeStamp": "Update Time Stamp",
+            "rtSched": "Rt Sched",
+            "contrLoc": "Contr Loc",
+            "businessAssociate": "Business Associate"
+        }
+    }
+}

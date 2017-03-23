@@ -1,0 +1,44 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "businessAssociateContact",
+            "otherEntityName": "businessAssociateContact",
+            "otherEntityRelationshipName": "businessAssociate"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "businessAssociateAddress",
+            "otherEntityName": "businessAssociateAddress",
+            "otherEntityRelationshipName": "businessAssociate"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "businessAssociateId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "baName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "baAbbr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "baNbr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "baDunsNbr",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170321041448",
+    "entityTableName": "business_associate",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

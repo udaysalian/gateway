@@ -1,0 +1,48 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "schedGrp",
+            "otherEntityName": "schedGrp",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "schedEvent"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "eventId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "workingCapacity",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "adjWorkingCapacity",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "eventType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "updater",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "updateTimestamp",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170321041448",
+    "entityTableName": "sched_event",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

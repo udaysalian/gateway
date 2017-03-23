@@ -1,0 +1,22 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "section",
+            "otherEntityName": "section",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "locationNbr",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170321041448",
+    "entityTableName": "section_location",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

@@ -1,0 +1,45 @@
+
+<div *ngIf="activity">
+    <h2><span jhiTranslate="netraApp.activity.detail.title">Activity</span> {{activity.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row">
+        <dt><span jhiTranslate="netraApp.activity.contrId">Contr Id</span></dt>
+        <dd>
+            <span>{{activity.contrId}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.activity.activityNbr">Activity Nbr</span></dt>
+        <dd>
+            <span>{{activity.activityNbr}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.activity.rcptLocNbr">Rcpt Loc Nbr</span></dt>
+        <dd>
+            <span>{{activity.rcptLocNbr}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.activity.dlvryLocNbr">Dlvry Loc Nbr</span></dt>
+        <dd>
+            <span>{{activity.dlvryLocNbr}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.activity.updater">Updater</span></dt>
+        <dd>
+            <span>{{activity.updater}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.activity.updateTimeStamp">Update Time Stamp</span></dt>
+        <dd>
+            <span>{{activity.updateTimeStamp | date:'medium'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'activity/'+ activity.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

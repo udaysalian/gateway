@@ -1,0 +1,73 @@
+<div>
+    <h2><span jhiTranslate="netraApp.contract.home.title">Contracts</span>
+        <button class="btn btn-primary float-xs-right create-contract" [routerLink]="['/', { outlets: { popup: ['contract-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="netraApp.contract.home.createLabel">
+            Create new Contract
+            </span>
+        </button></h2>
+    <jhi-alert></jhi-alert>
+
+    <div class="container-fluid">
+        <div class="row">
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="contracts">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="netraApp.contract.contrId">Contr Id</span></th>
+            <th><span jhiTranslate="netraApp.contract.updater">Updater</span></th>
+            <th><span jhiTranslate="netraApp.contract.updateTimeStamp">Update Time Stamp</span></th>
+            <th><span jhiTranslate="netraApp.contract.rtSched">Rt Sched</span></th>
+            <th><span jhiTranslate="netraApp.contract.businessAssociate">Business Associate</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let contract of contracts ;trackBy: trackId">
+                <td><a [routerLink]="['../contract', contract.id ]">{{contract.id}}</a></td>
+                <td>{{contract.contrId}}</td>
+                <td>{{contract.updater}}</td>
+                <td>{{contract.updateTimeStamp | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="contract.rtSched">
+                        <a [routerLink]="['../rt-sched', contract.rtSched?.id ]" >{{contract.rtSched?.id}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="contract.businessAssociate">
+                        <a [routerLink]="['../business-associate', contract.businessAssociate?.id ]" >{{contract.businessAssociate?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-xs-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../contract', contract.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'contract/'+ contract.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'contract/'+ contract.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+{
+    "netraApp": {
+        "nomPrty" : {
+            "home": {
+                "title": "NomPrties",
+                "createLabel": "नया Nom Prty बनाएँ",
+                "createOrEditLabel": "Nom Prty बनाएँ या संपादित करें"
+            },
+            "created": "एक नया Nom Prty [identifier: {{ param }}] तैयार है",
+            "updated": "एक Nom Prty [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Nom Prty [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "Nom Prty [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Nom Prty"
+            },
+            "contrId": "Contr Id",
+            "activityNbr": "Activity Nbr",
+            "gasDate": "Gas Date",
+            "prtyTp": "Prty Tp",
+            "prtyQty": "Prty Qty",
+            "subType": "Sub Type",
+            "dirOfFlow": "Dir Of Flow",
+            "updater": "Updater",
+            "updateTimeStamp": "Update Time Stamp",
+            "nom": "Nom"
+        }
+    }
+}

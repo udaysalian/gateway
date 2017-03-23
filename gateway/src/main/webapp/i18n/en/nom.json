@@ -1,0 +1,33 @@
+{
+    "netraApp": {
+        "nom" : {
+            "home": {
+                "title": "Noms",
+                "createLabel": "Create a new Nom",
+                "createOrEditLabel": "Create or edit a Nom"
+            },
+            "created": "A new Nom is created with identifier {{ param }}",
+            "updated": "A Nom is updated with identifier {{ param }}",
+            "deleted": "A Nom is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Nom {{ id }}?"
+            },
+            "detail": {
+                "title": "Nom"
+            },
+            "activityNbr": "Activity Nbr",
+            "gasDate": "Gas Date",
+            "reqRcptQty": "Req Rcpt Qty",
+            "reqDlvryQty": "Req Dlvry Qty",
+            "oldSchdRcptQty": "Old Schd Rcpt Qty",
+            "newSchdRcptQty": "New Schd Rcpt Qty",
+            "oldSchdDlvryQty": "Old Schd Dlvry Qty",
+            "newSchdDlvryQty": "New Schd Dlvry Qty",
+            "updater": "Updater",
+            "updateTimeStamp": "Update Time Stamp",
+            "activity": "Activity",
+            "contr": "Contr",
+            "prty": "Prty"
+        }
+    }
+}

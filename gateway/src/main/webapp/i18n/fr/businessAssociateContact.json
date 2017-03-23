@@ -1,0 +1,27 @@
+{
+    "netraApp": {
+        "businessAssociateContact" : {
+            "home": {
+                "title": "BusinessAssociateContacts",
+                "createLabel": "Créer un nouveau Business Associate Contact",
+                "createOrEditLabel": "Créer ou éditer un Business Associate Contact"
+            },
+            "created": "Un nouveau Business Associate Contact a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Business Associate Contact avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Business Associate Contact avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Business Associate Contact {{ id }} ?"
+            },
+            "detail": {
+                "title": "Business Associate Contact"
+            },
+            "businessAssociateContactId": "Business Associate Contact Id",
+            "beginDate": "Begin Date",
+            "endDate": "End Date",
+            "businessAssociate": "Business Associate",
+            "contact": "Contact",
+            "mailAddress": "Mail Address",
+            "deliveryAddress": "Delivery Address"
+        }
+    }
+}

@@ -1,0 +1,75 @@
+<div>
+    <h2><span jhiTranslate="netraApp.schedEvent.home.title">Sched Events</span>
+        <button class="btn btn-primary float-xs-right create-sched-event" [routerLink]="['/', { outlets: { popup: ['sched-event-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="netraApp.schedEvent.home.createLabel">
+            Create new Sched Event
+            </span>
+        </button></h2>
+    <jhi-alert></jhi-alert>
+
+    <div class="container-fluid">
+        <div class="row">
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="schedEvents">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="netraApp.schedEvent.eventId">Event Id</span></th>
+            <th><span jhiTranslate="netraApp.schedEvent.workingCapacity">Working Capacity</span></th>
+            <th><span jhiTranslate="netraApp.schedEvent.adjWorkingCapacity">Adj Working Capacity</span></th>
+            <th><span jhiTranslate="netraApp.schedEvent.status">Status</span></th>
+            <th><span jhiTranslate="netraApp.schedEvent.eventType">Event Type</span></th>
+            <th><span jhiTranslate="netraApp.schedEvent.updater">Updater</span></th>
+            <th><span jhiTranslate="netraApp.schedEvent.updateTimestamp">Update Timestamp</span></th>
+            <th><span jhiTranslate="netraApp.schedEvent.schedGrp">Sched Grp</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let schedEvent of schedEvents ;trackBy: trackId">
+                <td><a [routerLink]="['../sched-event', schedEvent.id ]">{{schedEvent.id}}</a></td>
+                <td>{{schedEvent.eventId}}</td>
+                <td>{{schedEvent.workingCapacity}}</td>
+                <td>{{schedEvent.adjWorkingCapacity}}</td>
+                <td>{{schedEvent.status}}</td>
+                <td>{{schedEvent.eventType}}</td>
+                <td>{{schedEvent.updater}}</td>
+                <td>{{schedEvent.updateTimestamp | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="schedEvent.schedGrp">
+                        <a [routerLink]="['../sched-grp', schedEvent.schedGrp?.id ]" >{{schedEvent.schedGrp?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-xs-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../sched-event', schedEvent.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'sched-event/'+ schedEvent.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'sched-event/'+ schedEvent.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

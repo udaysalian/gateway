@@ -1,0 +1,28 @@
+{
+    "netraApp": {
+        "schedEvent" : {
+            "home": {
+                "title": "Sched Events",
+                "createLabel": "Create a new Sched Event",
+                "createOrEditLabel": "Create or edit a Sched Event"
+            },
+            "created": "A new Sched Event is created with identifier {{ param }}",
+            "updated": "A Sched Event is updated with identifier {{ param }}",
+            "deleted": "A Sched Event is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Sched Event {{ id }}?"
+            },
+            "detail": {
+                "title": "Sched Event"
+            },
+            "eventId": "Event Id",
+            "workingCapacity": "Working Capacity",
+            "adjWorkingCapacity": "Adj Working Capacity",
+            "status": "Status",
+            "eventType": "Event Type",
+            "updater": "Updater",
+            "updateTimestamp": "Update Timestamp",
+            "schedGrp": "Sched Grp"
+        }
+    }
+}

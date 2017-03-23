@@ -1,0 +1,39 @@
+
+<div *ngIf="rtSchedVald">
+    <h2><span jhiTranslate="netraApp.rtSchedVald.detail.title">Rt Sched Vald</span> {{rtSchedVald.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row">
+        <dt><span jhiTranslate="netraApp.rtSchedVald.validType">Valid Type</span></dt>
+        <dd>
+            <span>{{rtSchedVald.validType}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.rtSchedVald.updater">Updater</span></dt>
+        <dd>
+            <span>{{rtSchedVald.updater}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.rtSchedVald.updateTimeStamp">Update Time Stamp</span></dt>
+        <dd>
+            <span>{{rtSchedVald.updateTimeStamp | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.rtSchedVald.rtSched">Rt Sched</span></dt>
+        <dd>
+            <div *ngIf="rtSchedVald.rtSched">
+                <a [routerLink]="['/rt-sched', rtSchedVald.rtSched?.id]">{{rtSchedVald.rtSched?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'rt-sched-vald/'+ rtSchedVald.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

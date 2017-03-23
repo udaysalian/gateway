@@ -1,0 +1,63 @@
+
+<div *ngIf="schedNom">
+    <h2><span jhiTranslate="netraApp.schedNom.detail.title">Sched Nom</span> {{schedNom.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row">
+        <dt><span jhiTranslate="netraApp.schedNom.contrId">Contr Id</span></dt>
+        <dd>
+            <span>{{schedNom.contrId}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.schedNom.activityNbr">Activity Nbr</span></dt>
+        <dd>
+            <span>{{schedNom.activityNbr}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.schedNom.gasDate">Gas Date</span></dt>
+        <dd>
+            <span>{{schedNom.gasDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.schedNom.oldSchdRcptQty">Old Schd Rcpt Qty</span></dt>
+        <dd>
+            <span>{{schedNom.oldSchdRcptQty}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.schedNom.newSchdRcptQty">New Schd Rcpt Qty</span></dt>
+        <dd>
+            <span>{{schedNom.newSchdRcptQty}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.schedNom.oldSchdDlvryQty">Old Schd Dlvry Qty</span></dt>
+        <dd>
+            <span>{{schedNom.oldSchdDlvryQty}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.schedNom.newSchdDlvryQty">New Schd Dlvry Qty</span></dt>
+        <dd>
+            <span>{{schedNom.newSchdDlvryQty}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.schedNom.upater">Upater</span></dt>
+        <dd>
+            <span>{{schedNom.upater}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.schedNom.updateTimeStamp">Update Time Stamp</span></dt>
+        <dd>
+            <span>{{schedNom.updateTimeStamp | date:'medium'}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.schedNom.schedEvent">Sched Event</span></dt>
+        <dd>
+            <div *ngIf="schedNom.schedEvent">
+                <a [routerLink]="['/sched-event', schedNom.schedEvent?.id]">{{schedNom.schedEvent?.id}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'sched-nom/'+ schedNom.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

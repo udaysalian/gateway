@@ -1,0 +1,57 @@
+
+
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+        <h4 class="modal-title" id="myBusinessAssociateLabel" jhiTranslate="netraApp.businessAssociate.home.createOrEditLabel">Create or edit a Business Associate</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!businessAssociate.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="businessAssociate.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.businessAssociate.businessAssociateId" for="field_businessAssociateId">Business Associate Id</label>
+            <input type="number" class="form-control" name="businessAssociateId" id="field_businessAssociateId"
+                [(ngModel)]="businessAssociate.businessAssociateId"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.businessAssociate.baName" for="field_baName">Ba Name</label>
+            <input type="text" class="form-control" name="baName" id="field_baName"
+                [(ngModel)]="businessAssociate.baName"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.businessAssociate.baAbbr" for="field_baAbbr">Ba Abbr</label>
+            <input type="text" class="form-control" name="baAbbr" id="field_baAbbr"
+                [(ngModel)]="businessAssociate.baAbbr"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.businessAssociate.baNbr" for="field_baNbr">Ba Nbr</label>
+            <input type="text" class="form-control" name="baNbr" id="field_baNbr"
+                [(ngModel)]="businessAssociate.baNbr"
+             />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="netraApp.businessAssociate.baDunsNbr" for="field_baDunsNbr">Ba Duns Nbr</label>
+            <input type="text" class="form-control" name="baDunsNbr" id="field_baDunsNbr"
+                [(ngModel)]="businessAssociate.baDunsNbr"
+             />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

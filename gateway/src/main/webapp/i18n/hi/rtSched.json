@@ -1,0 +1,24 @@
+{
+    "netraApp": {
+        "rtSched" : {
+            "home": {
+                "title": "RtScheds",
+                "createLabel": "नया Rt Sched बनाएँ",
+                "createOrEditLabel": "Rt Sched बनाएँ या संपादित करें"
+            },
+            "created": "एक नया Rt Sched [identifier: {{ param }}] तैयार है",
+            "updated": "एक Rt Sched [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Rt Sched [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "Rt Sched [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Rt Sched"
+            },
+            "rsType": "Rs Type",
+            "updater": "Updater",
+            "updateTimeStamp": "Update Time Stamp",
+            "rtSchedVald": "Rt Sched Vald"
+        }
+    }
+}

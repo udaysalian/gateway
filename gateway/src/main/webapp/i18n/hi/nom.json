@@ -1,0 +1,33 @@
+{
+    "netraApp": {
+        "nom" : {
+            "home": {
+                "title": "Noms",
+                "createLabel": "नया Nom बनाएँ",
+                "createOrEditLabel": "Nom बनाएँ या संपादित करें"
+            },
+            "created": "एक नया Nom [identifier: {{ param }}] तैयार है",
+            "updated": "एक Nom [identifier: {{ param }}] का अद्यतन हुआ है",
+            "deleted": "Nom [identifier: {{ param }}] हटा दिया है",
+            "delete": {
+                "question": "Nom [id: {{ id }}] हटाने की पुष्टि करें"
+            },
+            "detail": {
+                "title": "Nom"
+            },
+            "activityNbr": "Activity Nbr",
+            "gasDate": "Gas Date",
+            "reqRcptQty": "Req Rcpt Qty",
+            "reqDlvryQty": "Req Dlvry Qty",
+            "oldSchdRcptQty": "Old Schd Rcpt Qty",
+            "newSchdRcptQty": "New Schd Rcpt Qty",
+            "oldSchdDlvryQty": "Old Schd Dlvry Qty",
+            "newSchdDlvryQty": "New Schd Dlvry Qty",
+            "updater": "Updater",
+            "updateTimeStamp": "Update Time Stamp",
+            "activity": "Activity",
+            "contr": "Contr",
+            "prty": "Prty"
+        }
+    }
+}

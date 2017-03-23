@@ -1,0 +1,63 @@
+<div>
+    <h2><span jhiTranslate="netraApp.sectionLocation.home.title">Section Locations</span>
+        <button class="btn btn-primary float-xs-right create-section-location" [routerLink]="['/', { outlets: { popup: ['section-location-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="netraApp.sectionLocation.home.createLabel">
+            Create new Section Location
+            </span>
+        </button></h2>
+    <jhi-alert></jhi-alert>
+
+    <div class="container-fluid">
+        <div class="row">
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="sectionLocations">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="netraApp.sectionLocation.locationNbr">Location Nbr</span></th>
+            <th><span jhiTranslate="netraApp.sectionLocation.section">Section</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let sectionLocation of sectionLocations ;trackBy: trackId">
+                <td><a [routerLink]="['../section-location', sectionLocation.id ]">{{sectionLocation.id}}</a></td>
+                <td>{{sectionLocation.locationNbr}}</td>
+                <td>
+                    <div *ngIf="sectionLocation.section">
+                        <a [routerLink]="['../section', sectionLocation.section?.id ]" >{{sectionLocation.section?.id}}</a>
+                    </div>
+                </td>
+                <td class="text-xs-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../section-location', sectionLocation.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'section-location/'+ sectionLocation.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'section-location/'+ sectionLocation.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

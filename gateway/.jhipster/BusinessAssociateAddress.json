@@ -1,0 +1,46 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "businessAssociate",
+            "otherEntityName": "businessAssociate",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "businessAssociateAddressId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "addLine1",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "addressNbr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "addLine2",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "city",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "state",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "zipCode",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170321041448",
+    "entityTableName": "business_associate_address",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

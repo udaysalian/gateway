@@ -1,0 +1,33 @@
+
+<div *ngIf="section">
+    <h2><span jhiTranslate="netraApp.section.detail.title">Section</span> {{section.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row">
+        <dt><span jhiTranslate="netraApp.section.sectionId">Section Id</span></dt>
+        <dd>
+            <span>{{section.sectionId}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.section.description">Description</span></dt>
+        <dd>
+            <span>{{section.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="netraApp.section.sectionType">Section Type</span></dt>
+        <dd>
+            <span>{{section.sectionType}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'section/'+ section.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

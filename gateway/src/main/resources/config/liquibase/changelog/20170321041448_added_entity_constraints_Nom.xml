@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Nom.
+    -->
+    <changeSet id="20170321041448-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="activity_id"
+                                 baseTableName="nom"
+                                 constraintName="fk_nom_activity_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="activity"/>
+
+        <addForeignKeyConstraint baseColumnNames="contr_id"
+                                 baseTableName="nom"
+                                 constraintName="fk_nom_contr_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="contract"/>
+
+    </changeSet>
+</databaseChangeLog>
